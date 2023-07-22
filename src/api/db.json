@@ -1,0 +1,19 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "What is the capital of France?",
+        "choices": ["London", "Paris", "Berlin", "Madrid"],
+        "correctAnswer": "Paris",
+        "timeout": 30 
+      },
+      {
+        "id": 2,
+        "text": "What is 2 + 2?",
+        "choices": ["3", "4", "5", "6"],
+        "correctAnswer": "4",
+        "timeout": 20
+      }
+    ],
+    "userResponses": []
+  }
