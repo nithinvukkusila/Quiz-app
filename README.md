@@ -11,9 +11,9 @@ Install Dependencies:
 Navigate to the project directory and run the following command to install the required dependencies:
 
 
-cd quiz-app
+**cd quiz-app
 npm install 
-
+**
 
 Start the Development Server:
 
