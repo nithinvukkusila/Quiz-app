@@ -1,0 +1,126 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is the output of the following code?\n\nconsole.log(2 + '2');",
+      "choices": [
+        "4",
+        "22",
+        "NaN",
+        "TypeError"
+      ],
+      "correctAnswer": "22",
+      "timeout": 20
+    },
+    {
+      "id": 2,
+      "text": "Which of the following is NOT a valid JavaScript variable name?",
+      "choices": [
+        "_myVar",
+        "2myVar",
+        "$myVar",
+        "my_Var"
+      ],
+      "correctAnswer": "2myVar",
+      "timeout": 15
+    },
+    {
+      "id": 3,
+      "text": "What is the correct way to check if a variable is of type 'function'?",
+      "choices": [
+        "typeof myVar === 'function'",
+        "myVar instanceof function",
+        "typeof myVar === function",
+        "myVar instanceof Function"
+      ],
+      "correctAnswer": "typeof myVar === 'function'",
+      "timeout": 25
+    },
+    {
+      "id": 4,
+      "text": "What is the purpose of the 'use strict' directive in JavaScript?",
+      "choices": [
+        "To enable strict mode for the entire application",
+        "To specify that the code should be executed in strict mode",
+        "To allow the use of modern JavaScript features",
+        "To force the code to run faster"
+      ],
+      "correctAnswer": "To specify that the code should be executed in strict mode",
+      "timeout": 30
+    },
+    {
+      "id": 5,
+      "text": "Which array method is used to add one or more elements to the end of an array and returns the new length of the array?",
+      "choices": [
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
+      ],
+      "correctAnswer": "push()",
+      "timeout": 20
+    }
+  ],
+  "userResponses": [
+    {
+      "questionId": 1,
+      "selectedChoice": "22",
+      "timeTaken": 18,
+      "isCorrect": true
+    },
+    {
+      "questionId": 2,
+      "selectedChoice": "2myVar",
+      "timeTaken": 14,
+      "isCorrect": true
+    },
+    {
+      "questionId": 3,
+      "selectedChoice": "myVar instanceof function",
+      "timeTaken": 23,
+      "isCorrect": false
+    },
+    {
+      "questionId": 4,
+      "selectedChoice": "To specify that the code should be executed in strict mode",
+      "timeTaken": 29,
+      "isCorrect": true
+    },
+    {
+      "questionId": 5,
+      "selectedChoice": "pop()",
+      "timeTaken": 19,
+      "isCorrect": false
+    },
+    {
+      "questionId": 1,
+      "selectedChoice": "4",
+      "timeTaken": 16,
+      "isCorrect": false
+    },
+    {
+      "questionId": 2,
+      "selectedChoice": "_myVar",
+      "timeTaken": 14,
+      "isCorrect": false
+    },
+    {
+      "questionId": 3,
+      "selectedChoice": "typeof myVar === 'function'",
+      "timeTaken": 21,
+      "isCorrect": true
+    },
+    {
+      "questionId": 4,
+      "selectedChoice": "To enable strict mode for the entire application",
+      "timeTaken": 28,
+      "isCorrect": false
+    },
+    {
+      "questionId": 5,
+      "selectedChoice": "push()",
+      "timeTaken": 17,
+      "isCorrect": true
+    }
+  ]
+}

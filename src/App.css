@@ -1,5 +1,40 @@
+body {
+  background-color: rgb(102, 102, 248);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  overflow: visible;
+  margin: 50px;
+  width: fit-content;
+  margin: 50px auto;
+  border-radius: 8px;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.container {
+  width: 400px;
+  position: relative;
+  height: -webkit-fill-available;
+}
+
+.question-container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -13,26 +48,144 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+}
+
+.home p {
+  font-size: 30px;
+  color: rgb(4, 63, 4);
+  background-color: wheat;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 30px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn {
+  color: white;
+  background-color: rgb(2, 122, 2);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-weight: bold;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.current-question {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px; 
+  left: 50%; 
+  transform: translate(-50%, -90%); 
+  width: 50px;
+  height: 50px;
+  background-color: rgb(198, 195, 33);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-weight: bold;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header {
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.radio-group {
+  padding: 12px;
+  margin: 10px 0px;
+  border-radius: 8px;
+  background-color: #b9e9f7;
+  display: flex;
+  gap: 10px;
+}
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc; /* Add a border to the circle */
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+input[type="radio"]:checked + label:before {
+  background-color: #333;
+  border: 2px solid #333; /* Change the border color for the selected radio button */
+}
+
+input[type="radio"] + label:after {
+  content: "\2713"; /* Unicode for the checkmark character */
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  font-size: 10px;
+  color: white;
+  visibility: hidden;
+}
+
+input[type="radio"]:checked + label:after {
+  visibility: visible; /* Show the checkmark for the selected radio button */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 12px;
+  border-radius: 8px;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+.card-score {
+  font-weight: bold;
+}
+.card p {
+  margin: 0;
+}
+
+.optional-image {
+  margin: 10px 0;
+  width: 100px;
+  height: auto;
+  display: flex;
+  border-radius: 8px;
+}
+
+.quiz-report {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
