@@ -34,7 +34,7 @@ const Question = () => {
       };
       setUserResponses((prevResponses) => [...prevResponses, response]);
 
-      await fetch("http://localhost:4000/submit-response", {
+      await fetch(`${process.env.REACT_APP_API_BASE_URL}/submit-response`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const Question = () => {
         },
       });
     }
-  }, [userResponses])
+  }, [userResponses, questions, navigate])
 
   return (
     <>
@@ -114,12 +114,10 @@ const Question = () => {
             </div>
           ))}
         </form>
-        <div>
           <p>Time taken: {timer} seconds</p>
           <button className="primary-btn next-btn" onClick={submitResponse}>
             {currentQuestionIndex + 1 === questions.length ? "Finish" : "Next"}
           </button>
-        </div>
       </div>
     </>
   );

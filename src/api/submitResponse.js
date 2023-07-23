@@ -1,7 +1,7 @@
 const submitResponse = (req, res) => {
     const { questionId, selectedChoice, timeTaken } = req.body;
     const db = require("./db.json");
-  
+   
     // Find the question by id
     const question = db.questions.find((q) => q.id === questionId);
   

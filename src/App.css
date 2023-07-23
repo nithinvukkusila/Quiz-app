@@ -13,8 +13,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
-  overflow: scroll;
+  height: 500px;
+  overflow: visible;
   margin: 50px;
   width: fit-content;
   margin: 50px auto;
@@ -90,10 +90,10 @@ button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
   border-radius: 50%;
-  position: fixed;
-  top: 9%; 
+  position: absolute;
+  top: 20px; 
   left: 50%; 
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -90%); 
   width: 50px;
   height: 50px;
   background-color: rgb(198, 195, 33);
@@ -184,4 +184,8 @@ input[type="radio"]:checked + label:after {
 .quiz-report {
   width: 90%;
   margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }

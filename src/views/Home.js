@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="home">
       <h1>Uprised</h1>
-      <p>quiz</p>
+      <p>Quiz</p>
       <button className="primary-btn" onClick={startQuiz}>Start</button>
     </div>
   );
