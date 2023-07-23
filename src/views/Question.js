@@ -1,5 +1,4 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import apiService from "../api/service";
 import { useEffect, useRef, useState } from "react";
 
 const Question = () => {
@@ -9,6 +8,7 @@ const Question = () => {
     const [ currentQuestionIndex, setCurrentQuestionIndex ] = useState(0);
     const [selectedChoice, setSelectedChoice] = useState("");
     const [timer, setTimer] = useState(0)
+    const [userResponses, setUserResponses] = useState([]);
 
     const timerRef = useRef(null)
     const handleChoiceChange = (e) => {
@@ -26,12 +26,18 @@ const Question = () => {
 
             const question = questions[currentQuestionIndex]
             const timeTaken = question.timeout - timer;
-
-            await apiService.post("/submit-response", {
-                questionId: question.id,
-                selectedChoice,
-                timeTaken
-            })
+           
+            await fetch("http://localhost:4000/submit-response", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  questionId: question.id,
+                  selectedChoice,
+                  timeTaken,
+                }),
+              });
             if(currentQuestionIndex + 1 === questions.length) {
                 navigate('/report')
             }else {
@@ -54,23 +60,25 @@ const Question = () => {
     }, [currentQuestionIndex])
    return (
     <div>
-      <h1>Question 1</h1>
+      <div className="current-question">{currentQuestionIndex + 1}/{questions.length}</div>
       <h2>{questions[currentQuestionIndex].text}</h2>
+      
       <form>
         {questions[currentQuestionIndex].choices.map((choice, index) => (
-          <div key={index}>
+          <div key={index} className="radio-group">
             <input
               type="radio"
               name="choice"
+              id={`choice${index}`}
               value={choice}
               onChange={handleChoiceChange}
               checked={selectedChoice === choice}
             />
-            <label>{choice}</label>
+            <label htmlFor={`choice${index}`}>{choice}</label>
           </div>
         ))}
       </form>
-      <button onClick={submitResponse}>
+      <button  className="primary-btn next-btn" onClick={submitResponse}>
         {currentQuestionIndex + 1 === questions.length ? "Finish" : "Next"}
       </button>
       <p>Time taken: {timer} seconds</p>

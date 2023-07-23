@@ -1,10 +1,18 @@
-import axios from "axios";
+const jsonServer = require("json-server");
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const submitResponse = require("./submitResponse");
 
-const BASE_URL = "http://localhost:4000";
+server.use(jsonServer.bodyParser);
+server.use(middlewares);
 
-const apiService = axios.create({
-  baseURL: BASE_URL,
-  timeout: 5000, // 5 seconds timeout for API requests
+// Custom route for /submit-response
+server.post("/submit-response", submitResponse);
+
+server.use(router);
+
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on port ${PORT}`);
 });
-
-export default apiService;

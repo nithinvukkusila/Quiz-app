@@ -1,5 +1,21 @@
+body {
+  background-color: rgb(102, 102, 248);
+
+}
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 50px;
+}
+.container {
+  background-color: white;
+  min-width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px 20px;
+  border-radius: 8px;
+  position: relative;
 }
 
 .App-logo {
@@ -35,4 +51,98 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-btn {
+  color: white;
+  background-color: rgb(2, 122, 2);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.current-question {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 50px;
+  height: 50px;
+  background-color: rgb(198, 195, 33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+
+.next-btn {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  left: 50%; 
+  bottom: 0px;
+  transform: translate(-50%, -50%);   
+}
+
+.radio-group {
+  padding: 12px;
+  margin: 10px 0px;
+  border-radius: 8px;
+  background-color: #b9e9f7;
+  display: flex;
+  gap: 10px;
+}
+
+input[type="radio"] {
+display: none;
+}
+
+
+input[type="radio"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: none; 
+  border-radius: 50%;
+  background-color: #ccc; 
+}
+
+input[type="radio"]:checked + label:before {
+  background-color: #333; 
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 12px;
+  border-radius: 8px;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+.card-score {
+  font-weight: bold;
+}
+.card p {
+  margin: 0;
 }
