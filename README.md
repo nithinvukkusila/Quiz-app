@@ -1,70 +1,70 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Getting Started
+Follow the steps below to run the Quiz App on your local machine:
 
-## Available Scripts
+Clone the Repository:
 
-In the project directory, you can run:
+git clone https://github.com/nithinvukkusila/Quiz-app
+Install Dependencies:
 
-### `npm start`
+Navigate to the project directory and run the following command to install the required dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+cd quiz-app
+npm install 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the Development Server:
 
-### `npm run build`
+Run the following command to start the development server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm start
+This will launch the Quiz App in your default web browser at http://localhost:3000.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run mock:api 
+This will run the json-server mock api 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Using the Quiz App
+Home Page:
 
-### `npm run eject`
+The Quiz App home page displays a welcome message and a "Start" button. Click the "Start" button to begin the quiz.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Quiz Page:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The quiz page displays one question at a time. Each question consists of a text and an optional image. Select one option by clicking the corresponding radio button and then click the "Next" button to move to the next question.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Report Page:
 
-## Learn More
+After answering all the questions, the app will automatically navigate to the report page. The report page displays the following details:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Total Score: The total score obtained based on the correct answers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Correct Answers: The number of questions answered correctly.
 
-### Code Splitting
+Incorrect Answers: The number of questions answered incorrectly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Percentage: The percentage of correct answers out of the total questions.
+Start Again:
 
-### Analyzing the Bundle Size
+To take the quiz again, click the "Start Again" button on the report page. This will redirect you to the home page to start a new quiz.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+API Endpoints
+The Quiz App uses json-server to provide API endpoints for questions and submitting user responses.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Get Questions:
 
-### Advanced Configuration
+URL: http://localhost:4000/questions
+Request Type: GET
+Response: Returns an array of quiz questions in JSON format.
+Submit Response:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+URL: http://localhost:4000/submit-response
+Request Type: POST
+Request Body: Expects a JSON object with the following properties:
+questionId: The ID of the answered question.
+selectedChoice: The selected choice as the answer.
+timeTaken: The time taken to answer the question.
+Response: Returns a success status code if the response is submitted successfully.

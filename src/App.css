@@ -1,21 +1,40 @@
 body {
   background-color: rgb(102, 102, 248);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 70vh;
+  overflow: scroll;
   margin: 50px;
-}
-.container {
-  background-color: white;
-  min-width: 400px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 50px 20px;
+  width: fit-content;
+  margin: 50px auto;
   border-radius: 8px;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.container {
+  width: 400px;
   position: relative;
+  height: -webkit-fill-available;
+}
+
+.question-container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -29,28 +48,26 @@ body {
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home {
+  width: 90%;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.home p {
+  font-size: 30px;
+  color: rgb(4, 63, 4);
+  background-color: wheat;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 30px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 button {
@@ -65,14 +82,16 @@ button {
   border-radius: 15px;
   padding: 10px 15px;
   font-weight: bold;
+  width: 100%;
+  margin: 20px auto;
 }
 
 .current-question {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px;
   border-radius: 50%;
-  position: absolute;
-  top: 0%; 
+  position: fixed;
+  top: 9%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
   width: 50px;
@@ -84,16 +103,10 @@ button {
   font-weight: bold;
   color: white;
 }
-
-
-.next-btn {
-  position: absolute;
-  bottom: 20px;
-  width: 90%;
-  left: 50%; 
-  bottom: 0px;
-  transform: translate(-50%, -50%);   
+.header {
+  margin-top: 20px;
 }
+
 
 .radio-group {
   padding: 12px;
@@ -103,11 +116,9 @@ button {
   display: flex;
   gap: 10px;
 }
-
 input[type="radio"] {
-display: none;
+  display: none;
 }
-
 
 input[type="radio"] + label {
   position: relative;
@@ -120,15 +131,30 @@ input[type="radio"] + label:before {
   position: absolute;
   left: 0;
   top: 0;
-  width: 20px;
-  height: 20px;
-  border: none; 
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc; /* Add a border to the circle */
   border-radius: 50%;
-  background-color: #ccc; 
+  background-color: transparent;
 }
 
 input[type="radio"]:checked + label:before {
-  background-color: #333; 
+  background-color: #333;
+  border: 2px solid #333; /* Change the border color for the selected radio button */
+}
+
+input[type="radio"] + label:after {
+  content: "\2713"; /* Unicode for the checkmark character */
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  font-size: 10px;
+  color: white;
+  visibility: hidden;
+}
+
+input[type="radio"]:checked + label:after {
+  visibility: visible; /* Show the checkmark for the selected radio button */
 }
 
 .card {
@@ -145,4 +171,17 @@ input[type="radio"]:checked + label:before {
 }
 .card p {
   margin: 0;
+}
+
+.optional-image {
+  margin: 10px 0;
+  width: 100px;
+  height: auto;
+  display: flex;
+  border-radius: 8px;
+}
+
+.quiz-report {
+  width: 90%;
+  margin: auto;
 }

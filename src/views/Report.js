@@ -1,34 +1,34 @@
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const Report = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { questions, totalScore, correctAnswers } = {};
-  const totalQuestions = 0;
-
-  const incorrectAnswers = totalQuestions - correctAnswers;
-
-  useEffect(() => {
-    fetch("http://localhost:4000/submit-response")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data.data);
-      });
-  }, []);
-
-  const startAgain = () => {
-    navigate("/");
+  const { userResponses, totalQuestions } = location.state;
+  console.log(userResponses)
+  const calculateScore = () => {
+    let score = 0;
+    userResponses.forEach((response) => {
+      if (response.isCorrect) {
+        score++;
+      }
+    });
+    return score;
   };
 
   const calculatePercentage = (score, totalQuestions) => {
     return ((score / totalQuestions) * 100).toFixed(2);
   };
+
+  const totalScore = calculateScore();
+  const correctAnswers = totalScore;
+  const incorrectAnswers = totalQuestions - correctAnswers;
   const percentage = calculatePercentage(totalScore, totalQuestions);
 
+  const startAgain = () => {
+    navigate("/");
+  };
+
   return (
-    <div>
+    <div className="quiz-report">
       <h1>Quiz Report</h1>
       <div className="card">
         {" "}

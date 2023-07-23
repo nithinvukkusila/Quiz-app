@@ -2,108 +2,64 @@
   "questions": [
     {
       "id": 1,
-      "text": "What is the capital of France?",
+      "text": "What is the output of the following code?\n\nconsole.log(2 + '2');",
       "choices": [
-        "London",
-        "Paris",
-        "Berlin",
-        "Madrid"
+        "4",
+        "22",
+        "NaN",
+        "TypeError"
       ],
-      "correctAnswer": "Paris",
-      "timeout": 30,
-      "imageUrl": "https://fastly.picsum.photos/id/991/200/300.jpg?hmac=BdTxfK2wHhsGppraQzb5puxPKb5mPVzDaZPz8IiC44Q"
+      "correctAnswer": "22",
+      "timeout": 20
     },
     {
       "id": 2,
-      "text": "What is 2 + 2?",
+      "text": "Which of the following is NOT a valid JavaScript variable name?",
       "choices": [
-        "3",
-        "4",
-        "5",
-        "6"
+        "_myVar",
+        "2myVar",
+        "$myVar",
+        "my_Var"
       ],
-      "correctAnswer": "4",
+      "correctAnswer": "2myVar",
+      "timeout": 15
+    },
+    {
+      "id": 3,
+      "text": "What is the correct way to check if a variable is of type 'function'?",
+      "choices": [
+        "typeof myVar === 'function'",
+        "myVar instanceof function",
+        "typeof myVar === function",
+        "myVar instanceof Function"
+      ],
+      "correctAnswer": "typeof myVar === 'function'",
+      "timeout": 25
+    },
+    {
+      "id": 4,
+      "text": "What is the purpose of the 'use strict' directive in JavaScript?",
+      "choices": [
+        "To enable strict mode for the entire application",
+        "To specify that the code should be executed in strict mode",
+        "To allow the use of modern JavaScript features",
+        "To force the code to run faster"
+      ],
+      "correctAnswer": "To specify that the code should be executed in strict mode",
+      "timeout": 30
+    },
+    {
+      "id": 5,
+      "text": "Which array method is used to add one or more elements to the end of an array and returns the new length of the array?",
+      "choices": [
+        "push()",
+        "pop()",
+        "shift()",
+        "unshift()"
+      ],
+      "correctAnswer": "push()",
       "timeout": 20
     }
   ],
-  "userResponses": [
-    {
-      "questionId": 1,
-      "selectedChoice": "Berlin",
-      "timeTaken": 28,
-      "isCorrect": false
-    },
-    {
-      "questionId": 2,
-      "selectedChoice": "3",
-      "timeTaken": 17,
-      "isCorrect": false
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": 28,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": -16,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": 5,
-      "isCorrect": true
-    },
-    {
-      "questionId": 2,
-      "selectedChoice": "4",
-      "timeTaken": 18,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": -26,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": -6,
-      "isCorrect": true
-    },
-    {
-      "questionId": 2,
-      "selectedChoice": "4",
-      "timeTaken": 18,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": 27,
-      "isCorrect": true
-    },
-    {
-      "questionId": 2,
-      "selectedChoice": "4",
-      "timeTaken": 17,
-      "isCorrect": true
-    },
-    {
-      "questionId": 1,
-      "selectedChoice": "Paris",
-      "timeTaken": 2,
-      "isCorrect": true
-    },
-    {
-      "questionId": 2,
-      "selectedChoice": "4",
-      "timeTaken": 17,
-      "isCorrect": true
-    }
-  ]
+  "userResponses" :[]
 }

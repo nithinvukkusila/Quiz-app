@@ -14,7 +14,7 @@ const Home = () => {
     }
   };
   return (
-    <div>
+    <div className="home">
       <h1>Uprised</h1>
       <p>quiz</p>
       <button className="primary-btn" onClick={startQuiz}>Start</button>
